@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RKVocal Bot Pinger</title>
+</head>
+<body>
+  <h1>🤖 Поддержка активности бота включена</h1>
+  <p>Страница будет каждые 5 минут "будить" ваш бот на Replit.</p>
+
+  <script>
+    const PING_URL = "https://ed71473f-30de-4763-8c6a-8b2451b58a1b-00-37vll16qp5pi0.spock.replit.dev/";
+
+    function ping() {
+      fetch(PING_URL)
+        .then(() => console.log("✅ Пинг отправлен"))
+        .catch(err => console.error("❌ Ошибка пинга:", err));
+    }
+
+    ping();
+    setInterval(ping, 300000); // каждые 5 минут
+  </script>
+</body>
+</html>
